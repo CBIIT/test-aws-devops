@@ -1,0 +1,80 @@
+# https://github.com/CBIIT/app-edis - stage deployment
+
+name: EDIS deployment - stage
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        default: edis-stage
+      branch:
+        description: 'Branch'
+        required: true
+        default: master
+      build:
+        description: 'Build artifacts number'
+        required: false
+      s3bucket:
+        description: 'S3 bucket for CF templates'
+        required: true
+        default: cf-templates-13qnhwaj58n07-us-east-1
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    environment: ${{ github.event.inputs.environment }}
+    
+    permissions: 
+      packages: write
+      id-token: write
+      contents: write
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with: 
+          repository: CBIIT/app-edis
+          ref:  ${{ github.event.inputs.branch }}
+
+      # Runs a set of commands using the runners shell
+      - name: Workflow Parameters
+        run: |
+          echo Environment secret     - AWS OIDC provider role ${{ secrets.AWS_OIDC_PROVIDER_ROLE }}
+          echo Environment Tier       - ${{ github.event.inputs.environment }}
+          echo Artifacts Build Number - ${{ github.event.inputs.build }}
+          echo AWS S3 Bucket          - ${{ github.event.inputs.s3bucket }}
+
+      - name: Download built Artifacts into lambda-zip folder
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          repo: CBIIT/app-edis
+          branch: ${{ github.event.inputs.branch }}
+          workflow: lambda-build.yml
+          workflow_conclusion: success
+          run_number: ${{ github.event.inputs.lambda_build_number }}
+          name: lambda-zip
+          path: lambda-zip
+
+      - name: Check the existence of artifact
+        run: |
+          ls -la lambda-zip/lambda-userapi
+
+      - name: Setup AWS configuration
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: ${{ secrets.AWS_OIDC_PROVIDER_ROLE }}
+          role-session-name: TestSessionWithOIDC
+          aws-region: us-east-1
+          
+      - name: Test AWS Configuration
+        run: |
+          aws cloudformation describe-stacks | grep StackName
