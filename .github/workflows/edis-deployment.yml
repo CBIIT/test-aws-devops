@@ -1,12 +1,16 @@
 # https://github.com/CBIIT/app-edis - stage deployment
 
-name: EDIS deployment - STAGE
+name: EDIS deployment
 
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        default: edis-stage
       branch:
         description: 'EDIS Branch'
         required: true
@@ -26,7 +30,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    environment: edis-stage
+    environment: ${{ github.event.inputs.environment }}
     
     permissions: 
       packages: write
@@ -45,6 +49,7 @@ jobs:
       - name: Workflow Parameters
         run: |
           echo Environment secret     - AWS OIDC provider role ${{ secrets.AWS_OIDC_PROVIDER_ROLE }}
+          echo Environment Tier       - ${{ github.event.inputs.environment }}
           echo Artifacts Build Number - ${{ github.event.inputs.build }}
           echo AWS S3 Bucket          - ${{ github.event.inputs.s3bucket }}
 

@@ -1,6 +1,6 @@
 # https://github.com/CBIIT/app-edis - stage deployment
 
-name: EDIS deployment - STAGE
+name: EDIS deployment - STAGE (SUB)
 
 # Controls when the workflow will run
 on:
