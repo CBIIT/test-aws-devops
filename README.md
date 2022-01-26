@@ -13,4 +13,16 @@ Development teams are proposing a model that would allow developers to create Gi
 
 The diagram above illustrates the idea that the Operations team can establish a centralized repository that houses the production GitHub Action workflows for all projects. This allows NCI to take advantage of GitHub's predefined roles to limit the privileges that Development teams have to execute deployments in Stage and Production environments. 
 
-Our recommendation is to provide developers to assume a "write" role to be able to maintain workflow definitions and request workflow executions. Operations teams assume the "admin" role, which allows members to create GitHub environments, manage environment secrets, create deployment review checkpoints, and execute deployment workflows. This recommendation ( 1 ) reduces the Operations team workload in creating deployment pipelines; ( 2 ) puts responsibility on developers to correctly configure workflow jobs; and ( 3 ) preserves separation of duty and least privilege to comply with policy. 
+Our recommendation is to provide developers to assume a "write" role to be able to maintain workflow definitions and request workflow executions. Operations teams assume the "admin" role, which allows members to create GitHub environments, manage environment secrets, create deployment review checkpoints, and execute deployment workflows. This recommendation ( 1 ) reduces the Operations team workload in creating deployment pipelines; ( 2 ) puts responsibility on developers to correctly configure workflow jobs; and ( 3 ) preserves separation of duty and least privilege to comply with policy. For more about GitHub repository roles, please click here.
+
+--- add link to github roles above.
+### The Details
+heres where we explain the technical details about the proposed strategy.
+
+
+### The Process
+this is where we spell out that the deployment process remains the same - we submit a ticket through ServiceNow, providing instructions and input parameters. 
+We also need to discuss the process for setting up GitHub environments.
+
+### The Responsibilities
+just to make things black and white, we can create a table that distinguishes who is responsible for what.
