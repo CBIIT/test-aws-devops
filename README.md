@@ -45,8 +45,14 @@ Operations teams are responsible for configuring GitHub environments in the Cent
 ### The Responsibilities (under construction!)
 just to make things black and white, we can create a table that distinguishes who is responsible for what.
 
-| Activity                | Project Repository | Central Ops Repository |
-|:------------------------|:------------------ |:-----------------------|
-| Create Workflows        | Developer          | N/A                    |
-| Edit Workflows          | Developer          | N/A                    |
-| Clone Workflows         | N/A                | Developer              |
+| Activity                | Project Repository    | Central Ops Repository |
+|:------------------------|:----------------------|:-----------------------|
+| Create Workflows        | Developer             | N/A                    |
+| Edit Workflows          | Developer             | N/A                    |
+| Clone Workflows         | N/A                   | Developer              |
+| Configure Environment   | Developer             | Operations             |
+| Specify Input Parameters| Developer             | Developer              |
+| Execute Build Job       | Developer             | N/A                    |
+| Execute Deploy Job      | Developer, Operations | Operations             |
+| Monitor All Jobs        | Developer, Operations | Developer, Operations  |
+
