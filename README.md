@@ -17,7 +17,7 @@ The diagram above illustrates the idea that the Operations team can establish a 
 
 Our recommendation is to provide developers to assume a "write" role to be able to maintain workflow definitions and request workflow executions. Operations teams assume the "admin" role, which allows members to create GitHub environments, manage environment secrets, create deployment review checkpoints, and execute deployment workflows. This recommendation ( 1 ) reduces the Operations team workload in creating deployment pipelines; ( 2 ) puts responsibility on developers to correctly configure workflow jobs; and ( 3 ) preserves separation of duty and least privilege to comply with policy. For more about GitHub repository roles, please [click here](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization).
 
-## The Details (under construction!)
+## The Details
 This section describes how GitHub Actions is configured to support the proposed model by illustrating the build and deploy processes, where permission contraints are applied, and assets are exchanged across repositories to facilitate the CI/CD process. The diagram below depicts how separation of responsibility, least privilege, and DevOps principles (build one, deploy to many) are applied. While the illustration in the above section depicts the true relationship between the Centralized Operations Repository and the Project Repositories (one-to-many), the detail in the diagram below just focuses on the exchange with one project repository.
 ![Technical Detail of GitHub Actions Concept](assets/GitHubActionsTechnicalDetail.png)
 As expressed by the legend above the diagram, there are clearly distinguished activities that are handled by the Development teams and Operations teams. In the Centralized Operations Repository, notice that Development teams have permissions and responsibility to provide three of the five inputs for workflow execution: workflow definitions, build artifacts, and project code (IaC templates, shell scripts, etc.). These three inputs either source from, or identically mirror, the project repository workflows. This reduces operational overhead assumed by Operations teams to configure pipelines.
@@ -34,7 +34,7 @@ If Development teams have assumed the "write" repository role, can't they invoke
 Not only will the reviewer steps (specified in the Environment Protection Rules within the repository settings) protect unauthorized deployment activity, but they enable developers to initiate workflows and provide input parameters if the Operations team elects to adopt this approach. In summary, after repostiory environments are configured, Operations teams would only be required to approve deployment workflows initiated by Developers in the process. Please note, ServiceNow deployment requests are still required to formally request deployments. The GitHub reviewer implementation does not replace this process, and is recommended to be put in place as a safe-gaurd against unauthorized deployments.
 
 
-## The Process (under construction!)
+## The Process
 this is where we spell out that the deployment process remains the same - we submit a ticket through ServiceNow, providing instructions and input parameters. 
 We also need to discuss the process for setting up GitHub environments.
 
