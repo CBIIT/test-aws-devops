@@ -42,3 +42,9 @@ Operations teams are responsible for configuring GitHub environments in the Cent
 
 ### The Responsibilities (under construction!)
 just to make things black and white, we can create a table that distinguishes who is responsible for what.
+
+| Activity        | Responsible |
+|:----------------|:------------- |
+| Create GitHub Actions build workflows      | right-aligned |
+| col 2 is      | centered      |
+| zebra stripes | are neat      |
