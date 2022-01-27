@@ -24,9 +24,10 @@ As expressed by the legend above the diagram, there are clearly distinguished ac
 
 The two other inputs required to successfully execute a workflow where the target environments are Stage or Prod tiers are managed by the Operations team. These two inputs are input parameters and environment variables that contain secrets to facilitate authentication with the target account. 
 
-The GitHub environment configuration is specified by the development teams in a service request (submitted through ServiceNow) to set-up the upper-tier pipeline. Once configured, this step does not need to be repeated for a project (unless rotating secrets or changing target environments). To avoid administrative overhead for the Operations team, Development teams recommend using OIDC to authenticate with AWS environments. OIDC configuration and it's feasibility is out of scope of this discussion.
+- The GitHub environment configuration is specified by the development teams in a service request (submitted through ServiceNow) to set-up the upper-tier pipeline. Once configured, this step does not need to be repeated for a project (unless rotating secrets or changing target environments). To avoid administrative overhead for the Operations team, Development teams recommend using OIDC to authenticate with AWS environments. OIDC configuration and it's feasibility is out of scope of this discussion.
 
-Development teams also are responsible for specifying inpout parameters, which are unique to each workflow execution. Therefore, Development teams must supply the desired input parameters in the deployment service request submitted through ServiceNow.
+- Development teams also are responsible for specifying input parameters, which are unique to each workflow execution. Therefore, Development teams must supply the desired input parameters in the deployment service request submitted through ServiceNow.
+
 
 
 
