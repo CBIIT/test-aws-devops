@@ -20,10 +20,14 @@ Our recommendation is to provide developers to assume a "write" role to be able 
 ### The Details (under construction!)
 This section describes how GitHub Actions is configured to support the proposed model by illustrating the build and deploy processes, where permission contraints are applied, and assets are exchanged across repositories to facilitate the CI/CD process. The diagram below depicts how separation of responsibility, least privilege, and DevOps principles (build one, deploy to many) are applied. While the illustration in the above section depicts the true relationship between the Centralized Operations Repository and the Project Repositories (one-to-many), the detail in the diagram below just focuses on the exchange with one project repository.
 ![Technical Detail of GitHub Actions Concept](assets/GitHubActionsTechnicalDetail.png)
+As expressed by the legend above the diagram, there are clearly distinguished activities that are handled by the Development teams and Operations teams. In the Centralized Operations Repository, notice that Development teams have permissions and responsibility to provide three of the five inputs for workflow execution: workflow definitions, build artifacts, and project code (IaC templates, shell scripts, etc.). These three inputs either source from, or identically mirror, the project repository workflows. This reduces operational overhead assumed by Operations teams to configure pipelines.
 
-- There are three primary inputs to establish a workflow in the centralized operations repo. We've already discussed workflow definitions, and how it is the responsibility of the development team to clone/modify those in the centralized opps repo. The other two inputs are ( 1 ) project code, which includes scripts, IaC templates, etc.; and ( 2 ) build artifacts from the build workflow that is executed in project repositories.
-- Thoughts on discussing that developers choose how to authorize with target environements/accounts (secrets manager, OIDC)? These should be provided in service request ticket instructions.
-- Dont forget to mention that the diagram below represents the flow between one project and the centralized repo.
+The two other inputs required to successfully execute a workflow where the target environments are Stage or Prod tiers are managed by the Operations team. These two inputs are input parameters and environment variables that contain secrets to facilitate authentication with the target account. 
+
+The GitHub environment configuration is specified by the development teams in a service request (submitted through ServiceNow) to set-up the upper-tier pipeline. Once configured, this step does not need to be repeated for a project (unless rotating secrets or changing target environments). To avoid administrative overhead for the Operations team, Development teams recommend using OIDC to authenticate with AWS environments. OIDC configuration and it's feasibility is out of scope of this discussion.
+
+Development teams also are responsible for specifying inpout parameters, which are unique to each workflow execution. Therefore, Development teams must supply the desired input parameters in the deployment service request submitted through ServiceNow.
+
 
 
 
