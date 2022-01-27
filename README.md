@@ -1,8 +1,6 @@
 # NCI GitHub Actions Operationalization
 Product teams across NCI aim to make use of new tooling introduced to the enterprise under the current GitHub Enterprise offering to deploy cloud-hosted applications. As an alternative to Jenkins, GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows automation of build, test, and deployment pipeline processes. 
 
-![test](#The-Concept)
-
 ## The Challenge
 While GitHub Actions is an option for product teams within CBIIT, the enterprise needs to determine the path forward with operationalizing the service. Bringing GitHub Actions into CBIITs operational support scope requires governance and process definition. Product Development teams and Operations teams must have a clear picture of responsibilities and process that are in alignment with organizational policy, particularly as it relates to least privilege and separation of duties. 
 
@@ -34,7 +32,6 @@ The two other inputs required to successfully execute a workflow where the targe
 If Development teams have assumed the `write` repository role, can't they invoke their production deployment workflows? Yes - by default, that is possible. However, GitHub repository members who hold the `admin` role have the ability to specify workflow reviewers. Only repository administrators can set and change the workflow review policy, specify recipient of review notifications, and remove reviewer steps. 
 ![Example Environment Protection Rules](assets/envProtectionRules.png)
 Not only will the reviewer steps (specified in the Environment Protection Rules within the repository settings) protect unauthorized deployment activity, but they enable developers to initiate workflows and provide input parameters if the Operations team elects to adopt this approach. In summary, after repostiory environments are configured, Operations teams would only be required to approve deployment workflows initiated by Developers in the process. Please note, ServiceNow deployment requests are still required to formally request deployments. The GitHub reviewer implementation does not replace this process, and is recommended to be put in place as a safe-gaurd against unauthorized deployments.
-
 
 ## The Process
 CBIIT should place emphasis on the process for configuring GitHub environments for GitHub Actions pipelines, maintaining GitHub Actions workflow definitions, requesting deployments, and executing deployments to non-prod and prod Cloud One environments.
