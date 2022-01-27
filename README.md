@@ -9,7 +9,7 @@ This discussion is scoped to how code and infrastructure is built and deployed a
 ### The Concept
 Development teams are proposing a model that would allow developers to create GitHub Actions workflows that can be leveraged for build, test, and deployment of applications through all tiers. However, only Operations teams would reserve the privilege to deploy to stage and production environments. To enable developers in their efforts to define/validate workflows and execute deployments in lower tiers, we recommend the following structure:
 
---- enter the file with overview here.
+![GitHub Actions Concept Overview](images/ActionsOverview.png)
 
 The diagram above illustrates the idea that the Operations team can establish a centralized repository that houses the production GitHub Action workflows for all projects. This allows NCI to take advantage of GitHub's predefined roles to limit the privileges that Development teams have to execute deployments in Stage and Production environments. 
 
