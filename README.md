@@ -35,8 +35,7 @@ Not only will the reviewer steps (specified in the Environment Protection Rules 
 
 
 ## The Process
-this is where we spell out that the deployment process remains the same - we submit a ticket through ServiceNow, providing instructions and input parameters. 
-We also need to discuss the process for setting up GitHub environments.
+CBIIT should place emphasis on the process for configuring GitHub environments for GitHub Actions pipelines, maintaining GitHub Actions workflow definitions, requesting deployments, and executing deployments to non-prod and prod Cloud One environments.
 
 ### GitHub Environment Configuration
 Operations teams are responsible for configuring GitHub environments in the Centralized Operational Repository, as developers do not have permissions to do so under the `write` role privilege set. Development teams, however, must inform the Operations teams on how to configure environments. CBIIT will continue to use ServiceNow to request operational services. In the future, CBIIT should consider creating a Service Catalog Item that streamlines requests of this nature. The described workflow is illustrated below:
