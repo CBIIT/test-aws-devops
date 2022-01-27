@@ -22,6 +22,7 @@ Our recommendation is to provide developers to assume a "write" role to be able 
 - This is what enables us to achieve NCI policy compliance, as well as DevOps best practices with respect to "build once, deploy many"
 - There are three primary inputs to establish a workflow in the centralized operations repo. We've already discussed workflow definitions, and how it is the responsibility of the development team to clone/modify those in the centralized opps repo. The other two inputs are ( 1 ) project code, which includes scripts, IaC templates, etc.; and ( 2 ) build artifacts from the build workflow that is executed in project repositories.
 - Thoughts on discussing that developers choose how to authorize with target environements/accounts (secrets manager, OIDC)? These should be provided in service request ticket instructions.
+- Dont forget to mention that the diagram below represents the flow between one project and the centralized repo.
 
 ![Technical Detail of GitHub Actions Concept](assets/GitHubActionsConceptDetails.png)
 
