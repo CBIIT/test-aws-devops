@@ -17,13 +17,15 @@ The diagram above illustrates the idea that the Operations team can establish a 
 
 Our recommendation is to provide developers to assume a "write" role to be able to maintain workflow definitions and request workflow executions. Operations teams assume the "admin" role, which allows members to create GitHub environments, manage environment secrets, create deployment review checkpoints, and execute deployment workflows. This recommendation ( 1 ) reduces the Operations team workload in creating deployment pipelines; ( 2 ) puts responsibility on developers to correctly configure workflow jobs; and ( 3 ) preserves separation of duty and least privilege to comply with policy. For more about GitHub repository roles, please [click here](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization).
 
-### The Details
-heres where we explain the technical details about the proposed strategy.
+### The Details (under construction!)
+- This section is to highlight how GitHub Actions enables cross-repository access from the Centralized Operations Repository to the various Project Repositories.
+- This is what enables us to achieve NCI policy compliance, as well as DevOps best practices with respect to "build once, deploy many"
+- There are three primary inputs to establish a workflow in the centralized operations repo. We've already discussed workflow definitions, and how it is the responsibility of the development team to clone/modify those in the centralized opps repo. The other two inputs are ( 1 ) project code, which includes scripts, IaC templates, etc.; and ( 2 ) build artifacts from the build workflow that is executed in project repositories.
+- Thoughts on discussing that developers choose how to authorize with target environements/accounts (secrets manager, OIDC)? These should be provided in service request ticket instructions.
 
-
-### The Process
+### The Process (under construction!)
 this is where we spell out that the deployment process remains the same - we submit a ticket through ServiceNow, providing instructions and input parameters. 
 We also need to discuss the process for setting up GitHub environments.
 
-### The Responsibilities
+### The Responsibilities (under construction!)
 just to make things black and white, we can create a table that distinguishes who is responsible for what.
