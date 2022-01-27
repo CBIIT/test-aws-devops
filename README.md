@@ -26,7 +26,7 @@ The two other inputs required to successfully execute a workflow where the targe
 
 - The GitHub environment configuration is specified by the development teams in a service request (submitted through ServiceNow) to set-up the upper-tier pipeline. Once configured, this step does not need to be repeated for a project (unless rotating secrets or changing target environments). To avoid administrative overhead for the Operations team, Development teams recommend using OIDC to authenticate with AWS environments. OIDC configuration and it's feasibility is out of scope of this discussion.
 
-- Development teams also are responsible for specifying input parameters, which are unique to each workflow execution. Therefore, Development teams must supply the desired input parameters in the deployment service request submitted through ServiceNow.
+- Operations teams provide input parameters required as inputs for each workflow execution. Development teams also are responsible for specifying input parameters, which are unique to each workflow execution. Therefore, Development teams must supply the desired input parameters in the deployment service request submitted through ServiceNow.
 
 ### The Governance
 If Development teams have assumed the "write" repository role, can't they invoke their production deployment workflows? Yes - by default, that is possible. However, GitHub repository members who hold the "admin" role have the ability to specify workflow reviewers. Only repository administrators can set and change the workflow review policy, specify recipient of review notifications, and remove reviewer steps. 
@@ -34,9 +34,13 @@ If Development teams have assumed the "write" repository role, can't they invoke
 Not only will the reviewer steps (specified in the Environment Protection Rules within the repository settings) protect unauthorized deployment activity, but they enable developers to initiate workflows and provide input parameters if the Operations team elects to adopt this approach. In summary, after repostiory environments are configured, Operations teams would only be required to approve deployment workflows initiated by Developers in the process. Please note, ServiceNow deployment requests are still required to formally request deployments. The GitHub reviewer implementation does not replace this process, and is recommended to be put in place as a safe-gaurd against unauthorized deployments.
 
 
-### The Process (under construction!)
+## The Process (under construction!)
 this is where we spell out that the deployment process remains the same - we submit a ticket through ServiceNow, providing instructions and input parameters. 
 We also need to discuss the process for setting up GitHub environments.
+
+### GitHub Environment Configuration
+Operations teams are responsible for configuring GitHub environments in the Centralized Operational Repository, as developers do not have permissions to do so under the "write" role privilege set. Development teams, however, must inform the Operations teams on how to configure environments. CBIIT will continue to use ServiceNow to request operational services. In the future, CBIIT should consider creating a Service Catalog Item that streamlines requests of this nature. The described workflow is illustrated below:
+![Process Overview for Configuring GitHub Environments](assets/environmentConfig.png)
 
 ### The Responsibilities (under construction!)
 just to make things black and white, we can create a table that distinguishes who is responsible for what.
