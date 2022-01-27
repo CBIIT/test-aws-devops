@@ -28,6 +28,9 @@ The two other inputs required to successfully execute a workflow where the targe
 
 - Development teams also are responsible for specifying input parameters, which are unique to each workflow execution. Therefore, Development teams must supply the desired input parameters in the deployment service request submitted through ServiceNow.
 
+### The Governance
+If Development teams have assumed the "write" repository role, can't they invoke their production deployment workflows? Yes - by default, that is possible. However, GitHub repository members who hold the "admin" role have the ability to specify workflow reviewers. Only repository administrators can set and change the workflow review policy, specify recipient of review notifications, and remove reviewer steps. 
+
 
 
 
