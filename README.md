@@ -1,4 +1,4 @@
->Once finalized, this document will be converted to a Knowledge Article
+>Once finalized, this document will be converted to a ServiceNow Knowledge Article
 
 # NCI GitHub Actions Operationalization
 Product teams across NCI aim to make use of new tooling introduced to the enterprise under the current GitHub Enterprise offering to deploy cloud-hosted applications. As an alternative to Jenkins, GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows automation of build, test, and deployment pipeline processes. 
