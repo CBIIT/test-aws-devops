@@ -24,7 +24,7 @@ Our recommendation is to provide developers to assume a "write" role to be able 
 - Thoughts on discussing that developers choose how to authorize with target environements/accounts (secrets manager, OIDC)? These should be provided in service request ticket instructions.
 - Dont forget to mention that the diagram below represents the flow between one project and the centralized repo.
 
-![Technical Detail of GitHub Actions Concept](assets/GitHubActionsConceptDetails.png)
+![Technical Detail of GitHub Actions Concept](assets/GitHubActionsTechnicalDetail.png)
 
 ### The Process (under construction!)
 this is where we spell out that the deployment process remains the same - we submit a ticket through ServiceNow, providing instructions and input parameters. 
