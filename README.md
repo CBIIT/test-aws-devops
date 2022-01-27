@@ -48,4 +48,5 @@ just to make things black and white, we can create a table that distinguishes wh
 | Activity                | Project Repository | Central Ops Repository |
 |:------------------------|:------------------ |:-----------------------|
 | Create Workflows        | Developer          | N/A                    |
-| Edit Workflows          |                    |                        |
+| Edit Workflows          | Developer          | N/A                    |
+| Clone Workflows         | N/A                | Developer              |
