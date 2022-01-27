@@ -30,7 +30,7 @@ The two other inputs required to successfully execute a workflow where the targe
 
 ### The Governance
 If Development teams have assumed the "write" repository role, can't they invoke their production deployment workflows? Yes - by default, that is possible. However, GitHub repository members who hold the "admin" role have the ability to specify workflow reviewers. Only repository administrators can set and change the workflow review policy, specify recipient of review notifications, and remove reviewer steps. 
-
+![Example Environment Protection Rules](assets/environmentProtectionRules.png)
 
 
 
