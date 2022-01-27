@@ -42,8 +42,8 @@ CBIIT should place emphasis on the process for configuring GitHub environments f
 Operations teams are responsible for configuring GitHub environments in the Centralized Operational Repository, as developers do not have permissions to do so under the `write` role privilege set. Development teams, however, must inform the Operations teams on how to configure environments. CBIIT will continue to use ServiceNow to request operational services. In the future, CBIIT should consider creating a Service Catalog Item that streamlines requests of this nature. The described workflow is illustrated below:
 ![Process Overview for Configuring GitHub Environments](assets/envConfigProcess3.png)
 
-### The Responsibilities (under construction!)
-just to make things black and white, we can create a table that distinguishes who is responsible for what.
+### The Responsibilities 
+Please refer to the following table that provides a simple overview of what each party is responsible for, or has the privilege to perform with respect to project and centralized operational repositories:
 
 | Activity                  | Project Repository    | Central Ops Repository |
 |:--------------------------|:----------------------|:-----------------------|
