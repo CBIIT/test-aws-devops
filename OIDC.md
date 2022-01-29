@@ -4,7 +4,7 @@
 
 Especially in project scenarios where a product is based on serverless, cloud-native technologies, Development teams can benefit by leveraging GitHub's hosted runners.
 
-NCI's investment in GitHub Enterprise opens many doors to new and advantageous capabilities as it relates to continuous integration and continuous delivery (CI/CD) tooling. ![GitHub Actions](https://github.com/features/actions) is now available to product teams as a cloud-based CI/CD service, offering an alternative to on-prem based services adopted by the enterprise, such as Jenkins.
+NCI's investment in GitHub Enterprise opens many doors to new and advantageous capabilities as it relates to continuous integration and continuous delivery (CI/CD) tooling. [GitHub Actions](https://github.com/features/actions) is now available to product teams as a cloud-based CI/CD service, offering an alternative to on-prem based services adopted by the enterprise, such as Jenkins.
 
 As CBIIT's Cloud One environment matures, and as progress to launch and support Cloud Two approaches, Development teams are advancing modern, serverless, and cloud-native products. When evaluating available CI/CD tooling for these modernized architectures, benefits of GitHub actions become obvious for many use cases. GitHub's ![Hosted Runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) offers virtual machines to host build, test, and deploy action workflows, following the serverless model. This means that Development and Operations teams do not inherit the overhead of managing the infrastructure (maintenance, upgrades, etc.) for the compute resources consumed to execute actions.
 
